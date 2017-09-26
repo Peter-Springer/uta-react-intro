@@ -1,15 +1,16 @@
 import React from 'react'
 
-const Book = ({details}) => {
+const Book = ({details, addBook}) => {
   let authors
-  if (details.volumeInfo.authors) {
-    authors = details.volumeInfo.authors.map((author, i) => <p key={i}>{author}</p>)
+  if (details.authors) {
+    authors = details.authors.map((author, i) => <p key={i}>{author}</p>)
   }
     return (
       <div>
-        <p>{details.volumeInfo.title}</p>
-        <img alt='thumbnail' src={details.volumeInfo.imageLinks.thumbnail}/>
+        <p>{details.title}</p>
+        <img alt='thumbnail' src={details.imageLinks.thumbnail}/>
         {authors}
+        <button onClick={() => addBook(details)}>Add</button>
       </div>
     )
 }

@@ -10,7 +10,8 @@ class App extends Component {
     super(props)
     this.state = {
       items: [],
-      searchInput: ''
+      searchInput: '',
+      myBooks: []
     }
   }
 
@@ -21,8 +22,19 @@ class App extends Component {
   handleAPICall = () => {
     fetch(`https://www.googleapis.com/books/v1/volumes?q=${this.state.searchInput}&maxResults=20`)
     .then((response) => response.json())
-    .then(response => this.setState({ items: response.items}))
+    .then(response => this.setState({ items: response.items.map(item => item.volumeInfo)}))
 
+  }
+
+  handleAddBook = (book) => {
+      this.setState({
+        myBooks: [...this.state.myBooks, {
+          id: book.id,
+          title: book.title,
+          img: book.imageLinks.thumbnail,
+          authors: book.authors
+         }],
+      })
   }
 
   render() {
@@ -31,7 +43,8 @@ class App extends Component {
       <img src={compozed} className="App-logo" alt="logo" />
       <img src={logo} className="App-logo" alt="logo" />
         <SearchField search={this.handleSearch} apiCall={this.handleAPICall}/>
-        <BookList books={this.state.items}/>
+        <BookList books={this.state.items} addBook={this.handleAddBook}/>
+        <BookList books={this.state.myBooks}/>
       </div>
     );
   }
