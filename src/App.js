@@ -31,7 +31,7 @@ class App extends Component {
         myBooks: [...this.state.myBooks, {
           id: book.id,
           title: book.title,
-          img: book.imageLinks.thumbnail,
+          imageLinks: book.imageLinks,
           authors: book.authors
          }],
       })
