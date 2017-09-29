@@ -16,7 +16,7 @@ const Book = ({details, updateBookList}) => {
           <p className="authors">
             {authorTag}{authors}
           </p>
-          <button onClick={() => updateBookList(details)}>{details.deleteButton ? 'DELETE' : 'ADD'}</button>
+          <button className="book-button" onClick={() => updateBookList(details)}>{details.deleteButton ? 'REMOVE FROM READING LIST' : 'ADD TO READING LIST'}</button>
         </div>
       </div>
     )

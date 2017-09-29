@@ -46,7 +46,7 @@ class App extends Component {
     return (
       <div className="App">
       <img src={compozed} className="App-logo" alt="logo" />
-      <img src={logo} className="App-logo" alt="logo" />
+      <h1>My Reading List</h1>
       <SearchField search={this.handleSearch} apiCall={this.handleAPICall}/>
       <div className="body">
         <BookList header="Results" bookListCSS="api-list" books={this.state.items} updateBookList={this.handleAddBook}/>

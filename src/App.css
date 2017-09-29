@@ -42,8 +42,8 @@
 }
 
 .book-container {
-  height: 150px;
-  margin: 5px 5px;
+  height: 110px;
+  margin: 15px 5px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -52,25 +52,34 @@
 .book-detail {
   display: flex;
   flex-direction: column;
-  justify-content:space-between;
-  align-items: flex-start;
-  margin: 10px;
+  margin: 0px 10px;
   overflow: hidden;
   white-space: nowrap;
-  text-overflow: ellipsis;
-
+  text-align: left;
+  height: 100%;
   width: 100%;
+  justify-content: space-between;
 }
 
 .title {
   text-overflow: ellipsis;
   overflow: hidden;
+  margin: 0px;
+}
 
+.authors {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin: 0px;
 }
 
 .book-img {
   width: 70px;
   height: 102px;
+}
+
+.book-button {
+  width: fit-content;
 }
 
 @keyframes App-logo-spin {
