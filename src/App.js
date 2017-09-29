@@ -29,7 +29,7 @@ class App extends Component {
   handleAddBook = (book) => {
       this.setState({
         myBooks: [...this.state.myBooks, {
-          id: book.id,
+          id: book.infoLink,
           title: book.title,
           imageLinks: book.imageLinks,
           authors: book.authors,
@@ -39,7 +39,7 @@ class App extends Component {
   }
 
   handleDeleteBook = (book) => {
-    this.setState({ myBooks: this.state.items.filter((item) => item.id !== book.id) })
+    this.setState({ myBooks: this.state.myBooks.filter((item) => item !== book) })
   }
 
   render() {
@@ -47,9 +47,12 @@ class App extends Component {
       <div className="App">
       <img src={compozed} className="App-logo" alt="logo" />
       <img src={logo} className="App-logo" alt="logo" />
-        <SearchField search={this.handleSearch} apiCall={this.handleAPICall}/>
-        <BookList books={this.state.items} updateBookList={this.handleAddBook}/>
-        <BookList books={this.state.myBooks} updateBookList={this.handleDeleteBook}/>
+      <SearchField search={this.handleSearch} apiCall={this.handleAPICall}/>
+      <div className="body">
+        <BookList header="Results" bookListCSS="api-list" books={this.state.items} updateBookList={this.handleAddBook}/>
+        <BookList header="My Reading List" bookListCSS="my-book-list" books={this.state.myBooks} updateBookList={this.handleDeleteBook}/>
+      </div>
+
       </div>
     );
   }

@@ -18,6 +18,61 @@
   font-size: large;
 }
 
+.body {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.api-list {
+  display: flex;
+  width: 500px;
+  height: auto;
+  flex-direction: column;
+  margin: 5px;
+}
+
+.my-book-list {
+  display: flex;
+  width: 500px;
+  height: auto;
+  flex-direction: column;
+  margin: 5px;
+}
+
+.book-container {
+  height: 150px;
+  margin: 5px 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.book-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  align-items: flex-start;
+  margin: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  width: 100%;
+}
+
+.title {
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+}
+
+.book-img {
+  width: 70px;
+  height: 102px;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

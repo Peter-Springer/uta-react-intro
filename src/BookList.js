@@ -1,10 +1,11 @@
 import React from 'react'
 import Book from './Book'
 
-const BookList = ({books, updateBookList}) => {
+const BookList = ({books, updateBookList, bookListCSS, header}) => {
   if (books) {
     return (
-      <div>
+      <div className={bookListCSS}>
+        <h3>{header}</h3>
       {books.map((book, i) => {
         return (
           <div key={i}>
