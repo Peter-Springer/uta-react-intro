@@ -39,18 +39,27 @@ class App extends Component {
   }
 
   handleDeleteBook = (book) => {
+    console.log(book);
     this.setState({ myBooks: this.state.myBooks.filter((item) => item !== book) })
   }
 
   render() {
     return (
       <div className="App">
-      <img src={compozed} className="App-logo" alt="logo" />
-      <h1>My Reading List</h1>
-      <SearchField search={this.handleSearch} apiCall={this.handleAPICall}/>
-      <div className="body">
-        <BookList header="Results" bookListCSS="api-list" books={this.state.items} updateBookList={this.handleAddBook}/>
-        <BookList header="My Reading List" bookListCSS="my-book-list" books={this.state.myBooks} updateBookList={this.handleDeleteBook}/>
+        <div className="search-div">
+          <h1>My Reading List</h1>
+        </div>
+        <header></header>
+        <div className="search-div">
+          <SearchField search={this.handleSearch} apiCall={this.handleAPICall}/>
+        </div>
+      <div className="book-list-body">
+        <div className="book-list">
+          <BookList header="Results" books={this.state.items} updateBookList={this.handleAddBook}/>
+        </div>
+        <div className="book-list">
+          <BookList header="My Reading List" books={this.state.myBooks} updateBookList={this.handleDeleteBook}/>
+        </div>
       </div>
 
       </div>

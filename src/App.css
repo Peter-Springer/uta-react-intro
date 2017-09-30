@@ -1,63 +1,69 @@
 .App {
   text-align: center;
+  font-family: 'Lato', sans-serif;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+header {
+  /*background-color: lightgray;*/
+  height: 120px;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-image: url('https://media.rbl.ms/image?u=%2Ffiles%2F2016%2F12%2F15%2F636174301728624387-986712616_diverse.jpg&ho=https%3A%2F%2Faz616578.vo.msecnd.net&s=866&h=6604cb4919113bcc6e1f430c8e2928ca66630a14ddb5c23620a382c8d0c66e6d&size=980x&c=752628303');
+  background-size: cover;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+h1 {
+  margin: 0px;
 }
 
-.App-intro {
-  font-size: large;
+.search-div{
+  height: 45px;
+  padding: 5px 0px;
 }
 
-.body {
+input {
+  margin: 10px;
+  width: 200px;
+}
+
+button {
+  color: #000000;
+  background: #ffffff;
+  text-decoration: none;
+}
+
+.book-container {
+  display: flex;
+  flex-direction: row;
+  margin: 8px 0px;
+  padding: 3px;
+  border: solid gray 1px;
+}
+
+.book-list-body {
   display: flex;
   align-items: flex-start;
   flex-direction: row;
   justify-content: center;
 }
 
-.api-list {
+.book-list {
+  width: 400px;
   display: flex;
-  width: 500px;
   height: auto;
   flex-direction: column;
   margin: 5px;
-}
-
-.my-book-list {
-  display: flex;
-  width: 500px;
-  height: auto;
-  flex-direction: column;
-  margin: 5px;
-}
-
-.book-container {
-  height: 110px;
-  margin: 15px 5px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
 }
 
 .book-detail {
   display: flex;
   flex-direction: column;
-  margin: 0px 10px;
+  margin: 2px 10px;
   overflow: hidden;
   white-space: nowrap;
   text-align: left;
-  height: 100%;
-  width: 100%;
   justify-content: space-between;
 }
 
@@ -80,9 +86,4 @@
 
 .book-button {
   width: fit-content;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }
